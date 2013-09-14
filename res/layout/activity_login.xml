@@ -24,7 +24,7 @@
         android:textSize="@dimen/login_subText" />
 
     <EditText
-        android:id="@+id/register_txtEmail"
+        android:id="@+id/login_txtEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -35,7 +35,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/register_txtPassword"
+        android:id="@+id/login_txtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"

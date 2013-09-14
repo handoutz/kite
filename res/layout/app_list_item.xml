@@ -19,7 +19,7 @@
         <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
-                android:id="@+id/imageView"
+                android:id="@+id/ali_appIcon"
                 android:layout_gravity="left|center_vertical"
                 android:src="@drawable/ic_launcher"
                 android:layout_margin="8dp"

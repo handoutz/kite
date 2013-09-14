@@ -10,6 +10,15 @@ public class User {
     private String userLocation;
     private Gender userGender;
 
+    /**
+     * Used when logging in
+     * @param _un username
+     */
+    public User(String _un, String _pw) {
+        this.userName = _un;
+        this.userPassword = _pw;
+    }
+
     public User(String userName, String userPassword, int userAge, String userLocation, Gender userGender) {
         this.userName = userName;
         this.userPassword = userPassword;

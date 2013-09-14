@@ -7,6 +7,6 @@
     <dimen name="login_subText">16dp</dimen>
     <dimen name="screen_padding">8dp</dimen>
     <dimen name="form_btwPadding">6dp</dimen>
-    <dimen name="ali_appNameSIze">28dp</dimen>
+    <dimen name="ali_appNameSIze">20dp</dimen>
 
 </resources>

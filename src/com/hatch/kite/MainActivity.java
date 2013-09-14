@@ -1,5 +1,6 @@
 package com.hatch.kite;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -11,7 +12,10 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.activity_main);
+
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
 	}
 
 	@Override

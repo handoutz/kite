@@ -22,6 +22,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.hatch.kite.LoginActivity"
+            android:label="Kite Login"></activity>
+        <activity
+                android:name=".AppListActivity"
+                android:label="App List"/>
     </application>
 
 </manifest>
