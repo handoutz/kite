@@ -12,10 +12,10 @@
     <string name="login_btnSignUp">Sign Up</string>
     <string name="register_explanation">All fields below are required.</string>
     <string name="register_birthdayHint">Birthday</string>
-    <string name="register_sex">Sex</string>
+    <string name="register_sex">Gender</string>
     <string name="register_sexMale">Male</string>
     <string name="register_rbFemale">Female</string>
-    <string name="register_locationHint">City, State</string>
+    <string name="register_locationHint">Zip Code</string>
     <string name="register_button_register">Register</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</string>
     <string name="cd_appIcons">application icon</string>

@@ -94,7 +94,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/register_locationHint"
-        android:inputType="textPostalAddress" />
+        android:inputType="number"/>
 
     <Button
         android:id="@+id/register_btnRegister"
