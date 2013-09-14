@@ -48,6 +48,10 @@ public class LoginActivity extends Activity {
                 } else {
                     Log.d("Login", "Login unsuccessful.");
                 }
+            } else if(view == btnRegister){
+                Intent i = new Intent(LoginActivity.this, RegisterActivity.class);
+                i.putExtra("email", txtEmail.getText().toString());
+                startActivity(i);
             }
         }
     }

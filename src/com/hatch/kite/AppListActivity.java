@@ -9,7 +9,12 @@ import android.view.ViewGroup;
 import android.webkit.WebChromeClient;
 import android.widget.*;
 
+import com.hatch.kite.api.ApiConnectionBase;
 import com.hatch.kite.api.TesterApplication;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -50,9 +55,24 @@ public class AppListActivity extends Activity {
         setContentView(R.layout.activity_app_list);
 
         lvItems = (ListView) findViewById(R.id.applist_mainList);
-        inflateListItem(new TesterApplication("i'm an app", "i'm an app i'm an app i'm an app i'm an app", null));
-        inflateListItem(new TesterApplication("Lorem Ipsum", getResources().getString(R.string.lorem_ipsum), null));
-        inflateListItem(new TesterApplication("Lorem Ipsum", getResources().getString(R.string.lorem_ipsum).toString().toUpperCase(), null));
+        ApiManager.Instance.getJson(new ApiConnectionBase.Action<JSONObject>() {
+            @Override
+            public void run(JSONObject jsonObject) {
+                try {
+                    JSONArray array = jsonObject.getJSONArray("apps");
+                    for (int i = 0; i < array.length(); i++) {
+                        JSONObject o = array.getJSONObject(i);
+                        TesterApplication app = new TesterApplication(o.getString("name"), o.getString("description"), null);
+                        inflateListItem(app);
+                    }
+                    doSetup();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "apps");
+    }
+    public void doSetup(){
         adapt = new ListAdapter() {
             @Override
             public boolean areAllItemsEnabled() {

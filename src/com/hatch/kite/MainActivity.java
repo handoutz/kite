@@ -4,7 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
 import android.view.Window;
+import android.widget.Toast;
+
+import com.hatch.kite.api.ApiConnectionBase;
+
+import org.json.JSONObject;
 
 public class MainActivity extends Activity {
 
@@ -14,8 +20,19 @@ public class MainActivity extends Activity {
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 
-        Intent i = new Intent(this, LoginActivity.class);
-        startActivity(i);
+        findViewById(R.id.splash_btnSignIn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(i);
+            }
+        });
+        findViewById(R.id.splash_btnSignUp).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, RegisterActivity.class));
+            }
+        });
 	}
 
 	@Override
