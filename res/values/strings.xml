@@ -17,5 +17,7 @@
     <string name="register_rbFemale">Female</string>
     <string name="register_locationHint">City, State</string>
     <string name="register_button_register">Register</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</string>
+    <string name="cd_appIcons">application icon</string>
 
 </resources>
