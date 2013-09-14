@@ -32,6 +32,7 @@
                 android:name=".AppListActivity"
                 android:label="App List"/>
         <activity android:name=".RegisterActivity"/>
+        <activity android:name=".AppDetailActivity"/>
     </application>
 
 </manifest>

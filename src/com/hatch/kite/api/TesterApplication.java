@@ -1,11 +1,16 @@
 package com.hatch.kite.api;
 
 import android.graphics.drawable.Drawable;
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import java.io.Serializable;
 
 /**
  * Created by vince on 9/14/13.
  */
-public class TesterApplication {
+@SuppressWarnings("serial")
+public class TesterApplication implements Serializable {
     private String appName;
     private String appDesc;
     private Drawable appIcon;
@@ -14,6 +19,7 @@ public class TesterApplication {
         this.appName = _name;
         this.appDesc = _desc;
         this.appIcon = _icon;
+
     }
 
     public Drawable getAppIcon() {
@@ -27,5 +33,4 @@ public class TesterApplication {
     public String getAppName() {
         return appName;
     }
-
 }

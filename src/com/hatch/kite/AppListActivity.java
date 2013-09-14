@@ -1,11 +1,14 @@
 package com.hatch.kite;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.DataSetObserver;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewStub;
 import android.webkit.WebChromeClient;
 import android.widget.*;
 
@@ -101,12 +104,12 @@ public class AppListActivity extends Activity {
 
             @Override
             public Object getItem(int i) {
-                return loadedViews.values().toArray()[i];
+                return loadedViews.keySet().toArray()[i];
             }
 
             @Override
             public long getItemId(int i) {
-                return ((View) getItem(i)).getId();
+                return ((View) loadedViews.values().toArray()[i]).getId();
             }
 
             @Override
@@ -116,7 +119,7 @@ public class AppListActivity extends Activity {
 
             @Override
             public View getView(int i, View view, ViewGroup viewGroup) {
-                return (View) getItem(i);
+                return ((View) loadedViews.values().toArray()[i]);
             }
 
             @Override
@@ -135,5 +138,14 @@ public class AppListActivity extends Activity {
             }
         };
         lvItems.setAdapter(adapt);
+        lvItems.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                TesterApplication app = (TesterApplication) adapterView.getItemAtPosition(i);
+                Intent intent = new Intent(AppListActivity.this, AppDetailActivity.class);
+                intent.putExtra("app", app);
+                startActivity(intent);
+            }
+        });
     }
 }

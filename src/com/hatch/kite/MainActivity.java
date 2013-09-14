@@ -3,12 +3,14 @@ package com.hatch.kite;
 import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.view.Window;
 import android.widget.Toast;
 
 import com.hatch.kite.api.ApiConnectionBase;
+import com.hatch.kite.api.HttpKeyValuePair;
 
 import org.json.JSONObject;
 
@@ -19,6 +21,13 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
+
+        ApiManager.Instance.postJson(new ApiConnectionBase.Action<JSONObject>() {
+            @Override
+            public void run(JSONObject jsonObject) {
+                Log.d("?", jsonObject.toString());
+            }
+        }, new HttpKeyValuePair[]{new HttpKeyValuePair("a","b")}, "wtf.php");
 
         findViewById(R.id.splash_btnSignIn).setOnClickListener(new View.OnClickListener() {
             @Override
