@@ -90,7 +90,6 @@ public class AppListActivity extends Activity {
         LayoutInflater inflater = getLayoutInflater();
         View v = inflater.inflate(R.layout.app_list_item, null);
 
-        ImageView ivIcon = (ImageView) v.findViewById(R.id.ali_appIcon);
         TextView tvName = (TextView) v.findViewById(R.id.ali_AppName);
         TextView tvDesc = (TextView) v.findViewById(R.id.ali_AppDesc);
 

@@ -50,10 +50,12 @@ public class TesterApplication implements Serializable {
             JSONObject app = o.getJSONObject("app");
             this.appName = app.getString("name");
             this.appDesc = app.getString("description");
-            JSONArray screens = app.getJSONArray("screens");
-            for (int i = 0; i < screens.length() - 1; i++) {
+            JSONArray screens_wtf = app.getJSONArray("screens");
+            for (int i = 0; i < screens_wtf.length() - 1; i++) {
                 try {
-                    JSONObject jsScreen = screens.getJSONObject(i);
+                    JSONObject jsScreen = screens_wtf.optJSONObject(i);
+                    if(jsScreen == null)
+                        continue;
                     Screen screen = new Screen();
                     screen.id = jsScreen.getInt("id");
                     screen.imageUrl = jsScreen.getString("image_url");

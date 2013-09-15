@@ -4,10 +4,12 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -24,6 +26,8 @@ import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLEncoder;
+import java.util.Scanner;
 
 /**
  * Created by vince on 9/14/13.
@@ -52,7 +56,37 @@ public class AppDetailActivity extends Activity {
             @Override
             public void run(JSONObject jsonObject) {
                 app.loadFromJson(jsonObject);
-
+                try{
+                    appIcon.getSettings().setJavaScriptEnabled(true);
+                    String imgUrl = ((TesterApplication.Screen) app.screens.values().toArray()[0]).imageUrl;
+                    /*AssetManager mgr = getAssets();
+                    Scanner scan = new Scanner(mgr.open("webViewv2.html"));
+                    StringBuilder scanBuild = new StringBuilder();
+                    while(scan.hasNextLine()) {
+                        String line = scan.nextLine();
+                        line.replace("{{IMAGESRC}}", imgUrl);
+                        line.replace("{{IMAGEWIDTH}}", "256");
+                        line.replace("{{IMAGEHEIGHT}}", "256");
+                        line.replace("{{RENDERHOTSPOTS}}", "false");
+                        line.replace("{{HOTSPOTDATA}}", "{}");
+                        scanBuild.append(line);
+                    }
+                    appIcon.loadData(scanBuild.toString(), "text/html", "utf-8");
+                    /*<img src="{{IMAGESRC}}" style="width: {{IMAGEWIDTH}}px; height: {{IMAGEHEIGHT}}px;"/>
+                        <script>
+                            window.onload = function() {
+                                if({{RENDERHOTSPOTS}}) {
+                                    var hotspotData = {{HOTSPOTDATA}};
+                                }
+                            };*/
+                    appIcon.loadData("<html><head></head><body><img src=\""+imgUrl+"\" width=\"160\" height=\"240\" /></body></html>", "text/html", "utf-8");
+                    //appIcon.loadUrl("file:///android_asset/webViewv2.html#" + URLEncoder.encode();
+                }catch(Exception e){
+                    Log.d("wtf", "fuck you, json library");
+                } finally {
+                    progressDialog.hide();
+                    progressDialog.dismiss();
+                }
                 /*AsyncTask<TesterApplication, Void, Void> task = new AsyncTask<TesterApplication, Void, Void>() {
                     @Override
                     @Deprecated
