@@ -23,7 +23,7 @@ var app = new App();
 
 function setCurrentScreen(scr){
 	var $icon = $("#icon"), $hotspots = $("#hotspots");
-	//alert(JSON.stringify(scr.hotspots));
+	alert(JSON.stringify(scr));
 	$icon.attr('src', scr.imageUrl);
 	$hotspots.html('');
 	_.each(scr.hotspots, function(v, k){
@@ -52,6 +52,7 @@ var hotspots = {};
 window.onload = function() {
 	var appIcon = document.getElementById('icon');
 	var $icon = $("#icon");
+	alert(JSON.stringify(appData.screens));
 	if(true) {
 		var width = appIcon.width, height = appIcon.height;
 		app.appDesc = appData.appDesc;
@@ -62,7 +63,7 @@ window.onload = function() {
 			screen.id = k;
 			screen.imageUrl = v.imageUrl;
 			screen.name = v.name;
-			_.each(v.hotspots, function(vv,kk){
+			_.each(v.hotSpots, function(vv,kk){
 				var hs = new Hotspot();
 				hs.top = vv.hotspotArea.top;
 				hs.bottom = vv.hotspotArea.bottom;

@@ -7,8 +7,8 @@
               android:padding="@dimen/screen_padding">
 
     <WebView
-            android:layout_width="256dp"
-            android:layout_height="256dp"
+            android:layout_width="278dp"
+            android:layout_height="278dp"
             android:id="@+id/wvAppThumb"
             android:layout_gravity="center_horizontal"
             android:minHeight="256dp"

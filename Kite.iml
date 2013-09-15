@@ -23,6 +23,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="flexjson-2.1" level="project" />
+    <orderEntry type="library" name="commons-codec-1.6" level="project" />
   </component>
 </module>
 

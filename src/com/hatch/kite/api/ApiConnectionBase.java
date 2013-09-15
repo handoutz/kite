@@ -3,7 +3,18 @@ package com.hatch.kite.api;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.apache.http.Consts;
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpRequest;
+import org.apache.http.NameValuePair;
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 import org.json.*;
 
 import java.io.BufferedReader;
@@ -17,6 +28,8 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -27,6 +40,110 @@ public abstract class ApiConnectionBase {
     public static String baseUrl = "http://kite-api.herokuapp.com/";
     //public static String baseUrl = "http://localhost/";
 
+    public void postJsonApache(final ActionWithError<JSONObject> cb, final NameValuePair[] kvps, String... parts) {
+        StringBuilder bld = new StringBuilder(baseUrl);
+        for (String part : parts) {
+            bld.append(part);
+            bld.append("/");
+        }
+        try {
+            AsyncTask<String, Void, JSONObject> task = new AsyncTask<String, Void, JSONObject>() {
+                @Override
+                protected JSONObject doInBackground(String... objects) {
+                    try {
+                        HttpPost post = new HttpPost(objects[0]);
+
+                        ArrayList<NameValuePair> nvps = new ArrayList<NameValuePair>();
+                        Collections.addAll(nvps, kvps);
+                        UrlEncodedFormEntity postForm = new UrlEncodedFormEntity(nvps, "UTF-8");
+                        post.setEntity(postForm);
+
+                        CloseableHttpClient client = HttpClients.createDefault();
+                        CloseableHttpResponse response = client.execute(post);
+
+                        HttpEntity ent = response.getEntity();
+                        JSONObject result = null;
+                        if (ent != null) {
+                            result = new JSONObject(EntityUtils.toString(ent));
+                        }
+
+                        if (response != null)
+                            response.close();
+                        return result;
+                    } catch (ClientProtocolException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    return null;
+                }
+
+                @Override
+                protected void onPostExecute(JSONObject jsonObject) {
+                    if (jsonObject == null)
+                        cb.error(new NullPointerException("jsonObject was null on post"));
+                    else
+                        cb.run(jsonObject);
+                }
+            };
+            task.execute(bld.toString());
+        } catch (Exception e) {
+            cb.error(e);
+        }
+    }
+
+    public void getJsonApache(final ActionWithError<JSONObject> cb, String... parts) {
+        StringBuilder bld = new StringBuilder(baseUrl);
+        for (String part : parts) {
+            bld.append(part);
+            bld.append("/");
+        }
+        try {
+            AsyncTask<String, Void, JSONObject> task = new AsyncTask<String, Void, JSONObject>() {
+                @Override
+                protected JSONObject doInBackground(String... strings) {
+                    HttpGet get = new HttpGet(strings[0]);
+                    CloseableHttpClient client = HttpClients.createDefault();
+                    CloseableHttpResponse response = null;
+                    try {
+                        response = client.execute(get);
+
+                        JSONObject result = null;
+                        HttpEntity ent = response.getEntity();
+                        if (ent != null) {
+                            String resp = EntityUtils.toString(ent);
+                            result = new JSONObject(resp);
+                        }
+
+                        if (response != null)
+                            response.close();
+
+                        return result;
+                    } catch (IOException e) {
+                        return null;
+                    } catch (JSONException e) {
+                        return null;
+                    }
+                }
+
+                @Override
+                protected void onPostExecute(JSONObject jsonObject) {
+                    if (jsonObject == null) {
+                        cb.error(new NullPointerException("jsonObject was null!"));
+                    } else {
+                        cb.run(jsonObject);
+                    }
+                }
+            };
+            task.execute(bld.toString());
+        } catch (Exception e) {
+            cb.error(e);
+        }
+    }
+
+    @Deprecated
     public void getJson(final Action<JSONObject> callback, String... parts) {
         //URI uri = URI.create(baseUrl + parts.)
         StringBuilder bld = new StringBuilder(baseUrl);
@@ -67,6 +184,7 @@ public abstract class ApiConnectionBase {
         }
     }
 
+    @Deprecated
     public void postJson(final Action<JSONObject> callback, final HttpKeyValuePair[] params, String... parts) {
         try {
             StringBuilder bld = new StringBuilder(baseUrl);
@@ -145,5 +263,11 @@ public abstract class ApiConnectionBase {
 
     public interface Action<T> {
         void run(T t);
+    }
+
+    public interface ActionWithError<T> {
+        void run(T t);
+
+        void error(Exception e);
     }
 }

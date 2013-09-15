@@ -11,7 +11,13 @@ public class UserProfileActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_profile);
-        ((TextView)findViewById(R.id.profile_tvUsername)).setText(ApiManager.userSession.getUserEmail());
-        ((TextView)findViewById(R.id.profile_tvFullName)).setText(ApiManager.userSession.getUserName());
+        try {
+            ((TextView) findViewById(R.id.profile_tvUsername)).setText(ApiManager.userSession.getUserEmail());
+        } catch (Exception e) {
+        }
+        try {
+            ((TextView) findViewById(R.id.profile_tvFullName)).setText(ApiManager.userSession.getUserName());
+        } catch (Exception e) {
+        }
     }
 }

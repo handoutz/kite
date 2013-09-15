@@ -57,7 +57,7 @@ public class TesterApplication implements Serializable {
                     screen.id = jsScreen.getInt("id");
                     screen.imageUrl = jsScreen.getString("image_url");
                     screen.name = jsScreen.getString("name");
-                    JSONArray hotspots = jsScreen.getJSONArray("hotSpots");
+                    JSONArray hotspots = jsScreen.getJSONArray("hotspots");
                     for (int j = 0; j < hotspots.length(); j++) {
                         JSONObject jsHotspot = hotspots.getJSONObject(j);
                         HotSpot hotspot = new HotSpot();
