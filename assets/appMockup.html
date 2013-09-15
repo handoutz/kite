@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        body {
+            overflow-y: none;
+            overflow-x: none;
+        }
+        * {
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+        }
+        #icon {
+        	position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        #hotspots {
+        	z-index: 99998;
+        	position: absolute;
+        	top: 0;
+        	right: 0;
+        	bottom:0;
+        	left: 0;
+        }
+        .hotspot {
+        	background: rgba(200,50,50,0.5);
+        	z-index: 99999;
+        	position: absolute;
+        }
+    </style>
+</head>
+<body>
+<img id="icon" src="{{IMAGESRC}}" />
+<div id="hotspots"></div>
+
+<script type="text/javascript" src="jquery-2.0.min.js"></script>
+<script type="text/javascript" src="json.js"></script>
+<script type="text/javascript" src="underscore.js"></script>
+<script type="text/javascript">
+	var appData = {{APPDATA}};
+</script>
+<script type="text/javascript" src="mockup.js"></script>
+</body>
+</html>

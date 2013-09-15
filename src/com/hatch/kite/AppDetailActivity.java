@@ -30,6 +30,8 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.Scanner;
 
+import flexjson.JSONSerializer;
+
 /**
  * Created by vince on 9/14/13.
  */
@@ -75,74 +77,12 @@ public class AppDetailActivity extends Activity {
                         scanBuild.append(line);
                     }
                     appIcon.loadData(scanBuild.toString(), "text/html", "utf-8");
-                    /*<img src="{{IMAGESRC}}" style="width: {{IMAGEWIDTH}}px; height: {{IMAGEHEIGHT}}px;"/>
-                        <script>
-                            window.onload = function() {
-                                if({{RENDERHOTSPOTS}}) {
-                                    var hotspotData = {{HOTSPOTDATA}};
-                                }
-                            };*/
-
-                    //appIcon.loadData("<html><head></head><body><img src=\""+imgUrl+"\" width=\"160\" height=\"240\" /></body></html>", "text/html", "utf-8");
-                    //appIcon.loadUrl("file:///android_asset/webViewv2.html#" + URLEncoder.encode();
                 }catch(Exception e){
                     Log.d("wtf", "fuck you, json library");
                 } finally {
                     progressDialog.hide();
                     progressDialog.dismiss();
                 }
-                /*AsyncTask<TesterApplication, Void, Void> task = new AsyncTask<TesterApplication, Void, Void>() {
-                    @Override
-                    @Deprecated
-                    protected Void doInBackground(TesterApplication... testerApplications) {
-                        TesterApplication tapp = testerApplications[0];
-                        for (TesterApplication.Screen screen : tapp.screens.values()) {
-                            /*ImageView iv = new ImageView(context);
-
-                                try{
-                                    String url1 = "http://<my IP>/test/abc.jpg";
-                                    URL ulrn = new URL(url1);
-                                    HttpURLConnection con = (HttpURLConnection)ulrn.openConnection();
-                                    InputStream is = con.getInputStream();
-                                    Bitmap bmp = BitmapFactory.decodeStream(is);
-                                    if (null != bmp)
-                                        iv.setImageBitmap(bmp);
-                                    else
-                                        System.out.println("The Bitmap is NULL");
-
-                                } catch(Exception e) {
-                                }
-
-                            try {
-                                URL u = new URL(screen.imageUrl);
-                                HttpURLConnection con = (HttpURLConnection) u.openConnection();
-                                InputStream is = con.getInputStream();
-                                Bitmap bmp = BitmapFactory.decodeStream(is);
-                                if (bmp != null)
-                                    screen.imageBitmap = bmp;
-                                con.disconnect();
-                            } catch (MalformedURLException e) {
-                                e.printStackTrace();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                            }
-                        }
-                        return null;
-                    }
-
-                    @Override
-                    protected void onPostExecute(Void aVoid) {
-                        if (app.screens.values().toArray().length > 0) {
-                            Bitmap ourBitmap = ((TesterApplication.Screen) app.screens.values().toArray()[0]).imageBitmap;
-                            if (ourBitmap != null)
-                                ((ImageView) findViewById(R.id.ald_ivAppThumb)).setImageBitmap(ourBitmap);
-                        }
-
-                        progressDialog.hide();
-                        progressDialog.dismiss();
-                    }
-                };
-                task.execute(app);*/
             }
         }, "apps", Integer.toString(app.id));
 
@@ -156,6 +96,17 @@ public class AppDetailActivity extends Activity {
                 d.setContentView(R.layout.dialog_rateme);
                 d.setCancelable(true);
                 d.show();
+            }
+        });
+        findViewById(R.id.ald_btnMockup).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AppDetailActivity.this, AppMockupActivity.class);
+                String appSerial = "";
+                JSONSerializer serial = new JSONSerializer();
+                appSerial = serial.deepSerialize(app);
+                intent.putExtra("app", appSerial);
+                startActivity(intent);
             }
         });
     }

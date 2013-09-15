@@ -102,7 +102,7 @@ public class TesterApplication implements Serializable {
         return appName;
     }
 
-    public class Screen {
+    public class Screen implements Serializable {
         public int id;
         public String name;
         public String imageUrl;
@@ -114,7 +114,7 @@ public class TesterApplication implements Serializable {
         }
     }
 
-    public class Hotspot {
+    public class Hotspot implements Serializable {
         public int id;
         public Rect hotspotArea;
         public int destination;
