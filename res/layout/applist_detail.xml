@@ -9,7 +9,7 @@
     <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/imageView"
+            android:id="@+id/ald_ivAppThumb"
             android:layout_gravity="center"
             android:minHeight="256dp"
             android:minWidth="256dp"
@@ -32,4 +32,11 @@
             android:id="@+id/ald_appDesc"
             android:layout_gravity="center"
             android:textSize="@dimen/login_subText"/>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ald_rateMe"
+            android:id="@+id/ald_btnRate"
+            android:layout_gravity="center_horizontal"/>
 </LinearLayout>

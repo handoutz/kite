@@ -40,7 +40,9 @@ public class ApiManager extends ApiConnectionBase {
         postJson(new Action<JSONObject>() {
             @Override
             public void run(JSONObject jsonObject) {
-                Log.d("KiteLogin", jsonObject.toString());
+                if (jsonObject != null) {
+                    Log.d("KiteLogin", jsonObject.toString());
+                }
             }
         }, new HttpKeyValuePair[]{new HttpKeyValuePair("name", u.getUserName()),
                 new HttpKeyValuePair("email", u.getUserEmail()),

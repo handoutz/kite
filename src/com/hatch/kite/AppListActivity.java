@@ -9,6 +9,7 @@ import android.database.DataSetObserver;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
@@ -48,7 +49,7 @@ public class AppListActivity extends Activity {
         setContentView(R.layout.activity_app_list);
 
         if(ApiManager.userSession == null){
-            
+
         }
 
         lvItems = (ListView) findViewById(R.id.applist_mainList);
@@ -63,10 +64,15 @@ public class AppListActivity extends Activity {
             @Override
             public void run(JSONObject jsonObject) {
                 try {
+                    if(jsonObject == null) {
+                        Log.d("fuck", "json object was null in applistactivity. fuck.");
+                        return;
+                    }
                     JSONArray array = jsonObject.getJSONArray("apps");
                     for (int i = 0; i < array.length(); i++) {
                         JSONObject o = array.getJSONObject(i);
                         TesterApplication app = new TesterApplication(o.getString("name"), o.getString("description"), null);
+                        app.id = o.getInt("id");
                         inflateListItem(app);
                     }
                     doSetup();
@@ -166,6 +172,7 @@ public class AppListActivity extends Activity {
                 TesterApplication app = (TesterApplication) adapterView.getItemAtPosition(i);
                 Intent intent = new Intent(AppListActivity.this, AppDetailActivity.class);
                 intent.putExtra("app", app);
+                intent.putExtra("id", app.id);
                 startActivity(intent);
             }
         });
