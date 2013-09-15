@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ import java.net.URL;
 public class AppDetailActivity extends Activity {
     ProgressDialog progressDialog;
     TesterApplication ourApplication;
+    WebView appIcon;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +46,14 @@ public class AppDetailActivity extends Activity {
         progressDialog.setMessage("Loading apps..");
         progressDialog.show();
 
+        appIcon = ((WebView)findViewById(R.id.wvAppThumb));
+
         ApiManager.Instance.getJson(new ApiConnectionBase.Action<JSONObject>() {
             @Override
             public void run(JSONObject jsonObject) {
                 app.loadFromJson(jsonObject);
-                AsyncTask<TesterApplication, Void, Void> task = new AsyncTask<TesterApplication, Void, Void>() {
+
+                /*AsyncTask<TesterApplication, Void, Void> task = new AsyncTask<TesterApplication, Void, Void>() {
                     @Override
                     @Deprecated
                     protected Void doInBackground(TesterApplication... testerApplications) {
@@ -69,7 +74,7 @@ public class AppDetailActivity extends Activity {
 
                                 } catch(Exception e) {
                                 }
-                                */
+
                             try {
                                 URL u = new URL(screen.imageUrl);
                                 HttpURLConnection con = (HttpURLConnection) u.openConnection();
@@ -99,7 +104,7 @@ public class AppDetailActivity extends Activity {
                         progressDialog.dismiss();
                     }
                 };
-                task.execute(app);
+                task.execute(app);*/
             }
         }, "apps", Integer.toString(app.id));
 

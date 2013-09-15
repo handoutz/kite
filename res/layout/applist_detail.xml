@@ -6,14 +6,13 @@
               android:layout_height="match_parent"
               android:padding="@dimen/screen_padding">
 
-    <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ald_ivAppThumb"
-            android:layout_gravity="center"
+    <WebView
+            android:layout_width="256dp"
+            android:layout_height="256dp"
+            android:id="@+id/wvAppThumb"
+            android:layout_gravity="center_horizontal"
             android:minHeight="256dp"
-            android:minWidth="256dp"
-            android:background="@color/some_kinda_shit"/>
+            android:minWidth="256dp"/>
 
     <TextView
             android:layout_width="wrap_content"
