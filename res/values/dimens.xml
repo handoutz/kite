@@ -8,5 +8,6 @@
     <dimen name="screen_padding">8dp</dimen>
     <dimen name="form_btwPadding">6dp</dimen>
     <dimen name="ali_appNameSIze">20dp</dimen>
+    <dimen name="tblpad">24dp</dimen>
 
 </resources>

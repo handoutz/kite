@@ -1,14 +1,20 @@
 package com.hatch.kite;
 
+import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.database.DataSetObserver;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
+import android.view.Window;
 import android.webkit.WebChromeClient;
 import android.widget.*;
 
@@ -30,9 +36,47 @@ public class AppListActivity extends Activity {
     private HashMap<TesterApplication, View> loadedViews;
     private ListAdapter adapt;
     private ListView lvItems;
+    private ProgressDialog progressDialog;
 
     public AppListActivity() {
         this.loadedViews = new HashMap<TesterApplication, View>();
+    }
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        setContentView(R.layout.activity_app_list);
+
+        if(ApiManager.userSession == null){
+            
+        }
+
+        lvItems = (ListView) findViewById(R.id.applist_mainList);
+
+        progressDialog = new ProgressDialog(this, android.R.style.Theme_Holo_Light_DarkActionBar);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Loading apps..");
+        progressDialog.show();
+        
+
+        ApiManager.Instance.getJson(new ApiConnectionBase.Action<JSONObject>() {
+            @Override
+            public void run(JSONObject jsonObject) {
+                try {
+                    JSONArray array = jsonObject.getJSONArray("apps");
+                    for (int i = 0; i < array.length(); i++) {
+                        JSONObject o = array.getJSONObject(i);
+                        TesterApplication app = new TesterApplication(o.getString("name"), o.getString("description"), null);
+                        inflateListItem(app);
+                    }
+                    doSetup();
+                    progressDialog.dismiss();
+                    progressDialog.hide();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, "apps");
     }
 
     //Buy It, Download It, Ignore It, Checkbox for allow developer to email user
@@ -53,28 +97,6 @@ public class AppListActivity extends Activity {
         return v;
     }
 
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_app_list);
-
-        lvItems = (ListView) findViewById(R.id.applist_mainList);
-        ApiManager.Instance.getJson(new ApiConnectionBase.Action<JSONObject>() {
-            @Override
-            public void run(JSONObject jsonObject) {
-                try {
-                    JSONArray array = jsonObject.getJSONArray("apps");
-                    for (int i = 0; i < array.length(); i++) {
-                        JSONObject o = array.getJSONObject(i);
-                        TesterApplication app = new TesterApplication(o.getString("name"), o.getString("description"), null);
-                        inflateListItem(app);
-                    }
-                    doSetup();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, "apps");
-    }
     public void doSetup(){
         adapt = new ListAdapter() {
             @Override

@@ -5,8 +5,8 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="8"
-        android:targetSdkVersion="17" />
+            android:minSdkVersion="14"
+            android:targetSdkVersion="17" />
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
@@ -30,7 +30,8 @@
             android:label="Kite Login"></activity>
         <activity
                 android:name=".AppListActivity"
-                android:label="App List"/>
+                android:label="App List"
+                android:theme="@android:style/Theme.Holo.Light.DarkActionBar"/>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".AppDetailActivity"/>
     </application>

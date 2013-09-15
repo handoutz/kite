@@ -32,6 +32,15 @@
         android:inputType="textEmailAddress" />
 
     <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/register_txtUsername"
+            android:layout_gravity="left|center_vertical"
+            android:hint="@string/register_hint_name"/>
+
+    <EditText
         android:id="@+id/register_txtPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

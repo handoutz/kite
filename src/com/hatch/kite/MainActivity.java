@@ -22,13 +22,6 @@ public class MainActivity extends Activity {
 		getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
 
-        ApiManager.Instance.postJson(new ApiConnectionBase.Action<JSONObject>() {
-            @Override
-            public void run(JSONObject jsonObject) {
-                Log.d("?", jsonObject.toString());
-            }
-        }, new HttpKeyValuePair[]{new HttpKeyValuePair("a","b")}, "wtf.php");
-
         findViewById(R.id.splash_btnSignIn).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +29,7 @@ public class MainActivity extends Activity {
                 startActivity(i);
             }
         });
+
         findViewById(R.id.splash_btnSignUp).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

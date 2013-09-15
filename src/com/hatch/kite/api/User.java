@@ -4,6 +4,7 @@ package com.hatch.kite.api;
  * Created by vince on 9/14/13.
  */
 public class User {
+    private String userEmail;
     private String userName;
     private String userPassword;
     private int userAge;
@@ -12,6 +13,7 @@ public class User {
 
     /**
      * Used when logging in
+     *
      * @param _un username
      */
     public User(String _un, String _pw) {
@@ -25,6 +27,18 @@ public class User {
         this.userAge = userAge;
         this.userLocation = userLocation;
         this.userGender = userGender;
+    }
+
+    public User() {
+
+    }
+
+    public String getUserEmail() {
+        return userEmail;
+    }
+
+    public void setUserEmail(String userEmail) {
+        this.userEmail = userEmail;
     }
 
     public String getUserName() {

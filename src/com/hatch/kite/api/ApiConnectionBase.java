@@ -25,6 +25,7 @@ import java.util.Scanner;
  */
 public abstract class ApiConnectionBase {
     public static String baseUrl = "http://kite-api.herokuapp.com/";
+    //public static String baseUrl = "http://localhost/";
 
     public void getJson(final Action<JSONObject> callback, String... parts) {
         //URI uri = URI.create(baseUrl + parts.)
@@ -135,8 +136,6 @@ public abstract class ApiConnectionBase {
             task.execute(bld.toString());
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-
         }
     }
 
