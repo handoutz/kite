@@ -14,13 +14,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/imageView"
             android:layout_marginTop="75dp"
-            android:src="@drawable/ic_launcher"
+            android:src="@drawable/kite_logo"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"/>
 
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="256dp"
+            android:layout_height="64dp"
             android:text="@string/login_signIn"
             android:id="@+id/splash_btnSignIn"
             android:paddingLeft="64dp"
@@ -29,8 +29,8 @@
             android:layout_centerHorizontal="true"/>
 
     <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="256dp"
+            android:layout_height="64dp"
             android:text="@string/login_btnSignUp"
             android:id="@+id/splash_btnSignUp"
             android:paddingLeft="64dp"

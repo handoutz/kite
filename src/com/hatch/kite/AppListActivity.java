@@ -116,7 +116,11 @@ public class AppListActivity extends Activity {
 
         //ivIcon.setImageDrawable(app.getAppIcon() == null ? getResources().getDrawable(R.drawable.ic_launcher) : app.getAppIcon());
         tvName.setText(app.getAppName());
-        tvDesc.setText(app.getAppDesc());
+        String appDesc = app.getAppDesc();
+        if(appDesc.length() > 64){
+            appDesc = appDesc.substring(0, 64) + "...";
+        }
+        tvDesc.setText(appDesc);
 
         loadedViews.put(app, v);
 

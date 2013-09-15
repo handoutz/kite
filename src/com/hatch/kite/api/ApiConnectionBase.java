@@ -3,17 +3,20 @@ package com.hatch.kite.api;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import org.apache.http.Consts;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
-import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.AbortableHttpRequest;
+
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
+
+import org.apache.http.impl.client.DefaultHttpClient;
+
 import org.apache.http.util.EntityUtils;
 import org.json.*;
 
@@ -58,17 +61,14 @@ public abstract class ApiConnectionBase {
                         UrlEncodedFormEntity postForm = new UrlEncodedFormEntity(nvps, "UTF-8");
                         post.setEntity(postForm);
 
-                        CloseableHttpClient client = HttpClients.createDefault();
-                        CloseableHttpResponse response = client.execute(post);
+                        HttpClient cli = new DefaultHttpClient();
+                        HttpResponse response = cli.execute(post);
 
                         HttpEntity ent = response.getEntity();
                         JSONObject result = null;
                         if (ent != null) {
                             result = new JSONObject(EntityUtils.toString(ent));
                         }
-
-                        if (response != null)
-                            response.close();
                         return result;
                     } catch (ClientProtocolException e) {
                         e.printStackTrace();
@@ -105,8 +105,8 @@ public abstract class ApiConnectionBase {
                 @Override
                 protected JSONObject doInBackground(String... strings) {
                     HttpGet get = new HttpGet(strings[0]);
-                    CloseableHttpClient client = HttpClients.createDefault();
-                    CloseableHttpResponse response = null;
+                    HttpClient client = new DefaultHttpClient();
+                    HttpResponse response = null;
                     try {
                         response = client.execute(get);
 
@@ -116,10 +116,6 @@ public abstract class ApiConnectionBase {
                             String resp = EntityUtils.toString(ent);
                             result = new JSONObject(resp);
                         }
-
-                        if (response != null)
-                            response.close();
-
                         return result;
                     } catch (IOException e) {
                         return null;
