@@ -12,6 +12,8 @@ import android.os.Parcelable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewStub;
@@ -49,7 +51,7 @@ public class AppListActivity extends Activity {
         setContentView(R.layout.activity_app_list);
 
         if(ApiManager.userSession == null){
-
+            Log.d("KiteLogin", "login failed. fail");
         }
 
         lvItems = (ListView) findViewById(R.id.applist_mainList);
@@ -83,6 +85,25 @@ public class AppListActivity extends Activity {
                 }
             }
         }, "apps");
+
+        ActionBar ab = getActionBar();
+        ab.setTitle("Kite Marketplace");
+        ab.setDisplayHomeAsUpEnabled(true);
+        ab.show();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        menu.findItem(R.id.action_profile).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                startActivity(new Intent(AppListActivity.this, UserProfileActivity.class));
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 
     //Buy It, Download It, Ignore It, Checkbox for allow developer to email user

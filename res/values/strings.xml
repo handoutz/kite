@@ -27,6 +27,8 @@
     <string name="rating_download_it">Download It</string>
     <string name="rating_ignore_it">Ignore It</string>
     <string name="dialog_rating_allow_email">Allow Developer to Email Me</string>
-    <string name="dialog_rating_btnRate">Rate!</string><string name="ald_btnViewMockup">View Mockup</string>
+    <string name="dialog_rating_btnRate">Rate!</string>
+    <string name="ald_btnViewMockup">View Mockup</string>
+    <string name="action_user_profile">User Profile</string>
 
 </resources>

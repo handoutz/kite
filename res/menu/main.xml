@@ -5,5 +5,13 @@
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/action_settings"/>
+    <item android:id="@+id/action_profile"
+          android:icon="@android:drawable/ic_menu_info_details"
+          android:title="@string/action_user_profile"
+          android:showAsAction="always"  />
+    <item android:id="@+id/action_users"
+          android:icon="@android:drawable/ic_menu_myplaces"
+          android:title="Users"
+          android:showAsAction="always"/>
 
 </menu>

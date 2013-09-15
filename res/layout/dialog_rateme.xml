@@ -7,33 +7,32 @@
 
     <RadioGroup
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
+            android:layout_height="fill_parent"
+            android:focusableInTouchMode="true"
+            android:id="@id/rating_rbRatings"
+            android:orientation="horizontal"
+            android:background="@color/some_kinda_shit">
 
-        <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="fill_parent"
-                android:layout_height="fill_parent"
-                android:background="@color/some_kinda_shit">
+        <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_buy_it"
+                android:id="@+id/rating_rbBuyIt"
+                android:layout_weight="1"/>
 
-            <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rating_buy_it"
-                    android:id="@+id/rating_rbBuyIt"
-                    android:layout_weight="1"/>
+        <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_ignore_it"
+                android:id="@+id/rating_rbIgnoreIt"
+                android:layout_weight="1"/>
 
-            <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rating_download_it"
-                    android:id="@+id/rating_rbDownloadIt"/>
-
-            <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/rating_ignore_it"
-                    android:id="@+id/rating_rbIgnoreIt"/>
-        </LinearLayout>
+        <RadioButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@string/rating_download_it"
+                android:id="@+id/rating_rbDownloadIt"
+                android:layout_weight="1"/>
     </RadioGroup>
 
     <CheckBox

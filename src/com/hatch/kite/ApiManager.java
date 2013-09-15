@@ -49,4 +49,7 @@ public class ApiManager extends ApiConnectionBase {
                 new HttpKeyValuePair("password", u.getUserPassword())}, "users");
         return true;
     }
+    public void GetUsers(Action<User[]> callback){
+
+    }
 }
