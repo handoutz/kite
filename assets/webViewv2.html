@@ -1,7 +1,56 @@
+<!DOCTYPE html>
 <html>
 <head>
+    <title></title>
+    <style>
+        body {
+            overflow-y: none;
+            overflow-x: none;
+        }
+        body * {
+            padding: 0 0 0 0;
+            margin: 0 0 0 0;
+        }
+    </style>
 </head>
 <body>
-<img src="{{IMAGESRC}}" style="width: {{IMAGEWIDTH}}px; height: {{IMAGEHEIGHT}}px;"/>
+<img id="icon" src="{{IMAGESRC}}" style="width: {{IMAGEWIDTH}}px; height: {{IMAGEHEIGHT}}px;"/>
+<script type="text/javascript">
+    	function Hotspot() {
+			var top = 0;
+			var right = 0;
+			var bottom = 0;
+			var left = 0;
+			var dest = 0;
+			var id = 0;
+		}
+
+		var hotspots = {};
+		var rawhsData = {{HOTSPOTDATA}};
+		window.onload = function() {
+			var appIcon = document.getElementById('icon');
+			if({{RENDERHOTSPOTS}}) {
+				var width = appIcon.width, height = appIcon.height;
+
+			}
+			/*if (window.location.hash) {
+				var hash = window.location.hash.substring(1);
+				var sliced = hash.split('|');
+				appIcon.src = sliced[0];
+				for(var i=1;i<sliced.length;i++) {
+					var eh = sliced[i];
+					var ee = eh.split(':');
+					var hotspot = new Hotspot();
+					hotspot.top = ee[0];
+					hotspot.right = ee[1];
+					hotspot.bottom = ee[2];
+					hotspot.left = ee[3];
+					hotspot.dest = ee[4];
+					hotspot.id = ee[5]; 
+					hotspots[hotspot.id] = hotspot;
+				}
+			}*/
+		}; 
+    </script>
 </body>
 </html>

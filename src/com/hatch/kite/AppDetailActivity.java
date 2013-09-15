@@ -11,6 +11,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -59,16 +60,18 @@ public class AppDetailActivity extends Activity {
                 try{
                     appIcon.getSettings().setJavaScriptEnabled(true);
                     String imgUrl = ((TesterApplication.Screen) app.screens.values().toArray()[0]).imageUrl;
-                    /*AssetManager mgr = getAssets();
+                    appIcon.setWebChromeClient(new WebChromeClient());
+
+                    AssetManager mgr = getAssets();
                     Scanner scan = new Scanner(mgr.open("webViewv2.html"));
                     StringBuilder scanBuild = new StringBuilder();
                     while(scan.hasNextLine()) {
                         String line = scan.nextLine();
-                        line.replace("{{IMAGESRC}}", imgUrl);
-                        line.replace("{{IMAGEWIDTH}}", "256");
-                        line.replace("{{IMAGEHEIGHT}}", "256");
-                        line.replace("{{RENDERHOTSPOTS}}", "false");
-                        line.replace("{{HOTSPOTDATA}}", "{}");
+                        line = line.replace("{{IMAGESRC}}", imgUrl);
+                        line = line.replace("{{IMAGEWIDTH}}", "256");
+                        line = line.replace("{{IMAGEHEIGHT}}", "256");
+                        line = line.replace("{{RENDERHOTSPOTS}}", "true");
+                        line = line.replace("{{HOTSPOTDATA}}", "{}");
                         scanBuild.append(line);
                     }
                     appIcon.loadData(scanBuild.toString(), "text/html", "utf-8");
@@ -79,7 +82,8 @@ public class AppDetailActivity extends Activity {
                                     var hotspotData = {{HOTSPOTDATA}};
                                 }
                             };*/
-                    appIcon.loadData("<html><head></head><body><img src=\""+imgUrl+"\" width=\"160\" height=\"240\" /></body></html>", "text/html", "utf-8");
+
+                    //appIcon.loadData("<html><head></head><body><img src=\""+imgUrl+"\" width=\"160\" height=\"240\" /></body></html>", "text/html", "utf-8");
                     //appIcon.loadUrl("file:///android_asset/webViewv2.html#" + URLEncoder.encode();
                 }catch(Exception e){
                     Log.d("wtf", "fuck you, json library");

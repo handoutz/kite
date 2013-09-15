@@ -32,10 +32,24 @@
             android:layout_gravity="center"
             android:textSize="@dimen/login_subText"/>
 
-    <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ald_rateMe"
-            android:id="@+id/ald_btnRate"
-            android:layout_gravity="center_horizontal"/>
+    <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+        <Button
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/ald_btnViewMockup"
+                android:id="@+id/ald_btnMockup"
+                android:layout_weight="1"/>
+
+        <Button
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:text="@string/ald_rateMe"
+                android:id="@+id/ald_btnRate"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"/>
+    </LinearLayout>
+
 </LinearLayout>

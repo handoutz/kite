@@ -43,15 +43,14 @@
   </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/com/hatch/kite/AppListActivity.java" line="96" />
-    <bookmark url="file://$PROJECT_DIR$/src/com/hatch/kite/AppDetailActivity.java" line="150" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/hatch/kite/AppDetailActivity.java" line="154" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="01727345-85a2-464e-bdfb-bfb674a59110" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/webViewv2.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/webView.html" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/hatch/kite/AppDetailActivity.java" afterPath="$PROJECT_DIR$/src/com/hatch/kite/AppDetailActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/hatch/kite/AppListActivity.java" afterPath="$PROJECT_DIR$/src/com/hatch/kite/AppListActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/hatch/kite/api/TesterApplication.java" afterPath="$PROJECT_DIR$/src/com/hatch/kite/api/TesterApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/applist_detail.xml" afterPath="$PROJECT_DIR$/res/layout/applist_detail.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/webViewv2.html" afterPath="$PROJECT_DIR$/assets/webViewv2.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Kite.iws" />
@@ -63,6 +62,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
@@ -119,13 +121,9 @@
       <file leaf-file-name="AppDetailActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/hatch/kite/AppDetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="112" column="65" selection-start="5020" selection-end="5020" vertical-scroll-proportion="1.0036167" vertical-offset="1125" max-vertical-offset="2445">
+            <state line="93" column="16" selection-start="3814" selection-end="3814" vertical-scroll-proportion="0.49723756" vertical-offset="1185" max-vertical-offset="2415">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1629#6438#0" expanded="true" />
-                <element signature="e#6427#6428#0" expanded="true" />
-                <element signature="e#6704#7057#0" expanded="true" />
-                <element signature="e#7046#7047#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,7 +132,7 @@
       <file leaf-file-name="webViewv2.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/webViewv2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="7" selection-start="122" selection-end="122" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="180">
+            <state line="34" column="13" selection-start="748" selection-end="748" vertical-scroll-proportion="-0.625" vertical-offset="495" max-vertical-offset="915">
               <folding>
                 <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -145,24 +143,33 @@
       <file leaf-file-name="AppListActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/hatch/kite/AppListActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="0" selection-start="3105" selection-end="3105" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1770">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="class#3573:5091" expanded="false" />
-              </folding>
+            <state line="90" column="31" selection-start="3071" selection-end="3071" vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2250">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="activity_app_list.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/activity_app_list.xml">
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
           <provider editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+            <state line="8" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="360">
               <folding />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="applist_detail.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/layout/applist_detail.xml">
           <provider selected="true" editor-type-id="android-designer">
             <state />
+          </provider>
+          <provider editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="900">
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -170,10 +177,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/hatch/kite/api/TesterApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="113" column="9" selection-start="4447" selection-end="4447" vertical-scroll-proportion="0.0" vertical-offset="1367" max-vertical-offset="1920">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#461#488#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -181,7 +185,7 @@
       <file leaf-file-name="ThreadPoolExecutor.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/concurrent/ThreadPoolExecutor.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="3675" selection-end="3675" vertical-scroll-proportion="0.0" vertical-offset="1112" max-vertical-offset="1665">
+            <state line="76" column="0" selection-start="3675" selection-end="3675" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="1680">
               <folding />
             </state>
           </provider>
@@ -199,7 +203,7 @@
       <file leaf-file-name="JSONArray.class" pinned="false" current="false" current-in-tab="false">
         <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/org/json/JSONArray.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="30" selection-start="3094" selection-end="3094" vertical-scroll-proportion="0.0" vertical-offset="1009" max-vertical-offset="1455">
+            <state line="75" column="30" selection-start="3094" selection-end="3094" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="1470">
               <folding />
             </state>
           </provider>
@@ -233,12 +237,12 @@
         <option value="$PROJECT_DIR$/src/com/hatch/kite/ApiManager.java" />
         <option value="$PROJECT_DIR$/src/com/hatch/kite/api/HttpKeyValuePair.java" />
         <option value="$PROJECT_DIR$/res/layout/app_list_item.xml" />
-        <option value="$PROJECT_DIR$/res/layout/applist_detail.xml" />
         <option value="$PROJECT_DIR$/src/com/hatch/kite/AppListActivity.java" />
         <option value="$PROJECT_DIR$/src/com/hatch/kite/api/TesterApplication.java" />
         <option value="$PROJECT_DIR$/assets/webView.html" />
-        <option value="$PROJECT_DIR$/assets/webViewv2.html" />
         <option value="$PROJECT_DIR$/src/com/hatch/kite/AppDetailActivity.java" />
+        <option value="$PROJECT_DIR$/assets/webViewv2.html" />
+        <option value="$PROJECT_DIR$/res/layout/applist_detail.xml" />
       </list>
     </option>
   </component>
@@ -273,8 +277,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -449,6 +451,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -469,8 +473,8 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RunManager" selected="Android Application.Kite">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
@@ -658,7 +662,11 @@
       <created>1379211718400</created>
       <updated>1379211718400</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="huh">
+      <created>1379219137613</created>
+      <updated>1379219137613</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -668,9 +676,8 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6706081" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6047297" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6689189" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
@@ -683,13 +690,15 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21969697" sideWeight="0.5574324" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32263514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21969697" sideWeight="0.6773649" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32263514" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32954547" sideWeight="0.6706081" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -697,13 +706,13 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6689189" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21969697" sideWeight="0.3631757" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21969697" sideWeight="0.3631757" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21969697" sideWeight="0.6706081" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293919" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3293919" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -716,8 +725,8 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293919" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34966215" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -790,35 +799,19 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/layout/user_profile.xml">
-      <provider editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="450">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/graphics/Rect.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="41" selection-start="419" selection-end="419" vertical-scroll-proportion="0.29605263" vertical-offset="90" max-vertical-offset="1365">
-          <folding />
-        </state>
+        <state line="13" column="41" selection-start="419" selection-end="419" vertical-scroll-proportion="0.29605263" vertical-offset="90" max-vertical-offset="1365" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/concurrent/FutureTask.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="0" selection-start="1224" selection-end="1224" vertical-scroll-proportion="1.3092784" vertical-offset="54" max-vertical-offset="525">
-          <folding />
-        </state>
+        <state line="30" column="0" selection-start="1224" selection-end="1224" vertical-scroll-proportion="1.3092784" vertical-offset="54" max-vertical-offset="525" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/lang/Thread.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="134" column="0" selection-start="4746" selection-end="4746" vertical-scroll-proportion="-0.030927835" vertical-offset="2004" max-vertical-offset="2295">
-          <folding />
-        </state>
+        <state line="134" column="0" selection-start="4746" selection-end="4746" vertical-scroll-proportion="-0.030927835" vertical-offset="2004" max-vertical-offset="2295" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/org/json/JSONArray.class">
@@ -828,35 +821,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/activity_app_list.xml">
-      <provider editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer">
-        <state />
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/net/URL.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="42" selection-start="2299" selection-end="2313" vertical-scroll-proportion="0.3314917" vertical-offset="510" max-vertical-offset="1065">
-          <folding />
-        </state>
+        <state line="43" column="42" selection-start="2299" selection-end="2313" vertical-scroll-proportion="0.3314917" vertical-offset="510" max-vertical-offset="1065" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/AsyncTask.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="31" selection-start="1870" selection-end="1870" vertical-scroll-proportion="0.22680412" vertical-offset="549" max-vertical-offset="840">
-          <folding />
-        </state>
+        <state line="42" column="31" selection-start="1870" selection-end="1870" vertical-scroll-proportion="0.22680412" vertical-offset="549" max-vertical-offset="840" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/os/Looper.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="743" selection-end="743" vertical-scroll-proportion="1.1348684" vertical-offset="0" max-vertical-offset="525">
-          <folding />
-        </state>
+        <state line="24" column="0" selection-start="743" selection-end="743" vertical-scroll-proportion="1.1348684" vertical-offset="0" max-vertical-offset="525" />
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/java/util/concurrent/ThreadPoolExecutor.class">
@@ -868,28 +845,13 @@
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/sdk/platforms/android-17/android.jar!/android/webkit/WebView.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="16" selection-start="2707" selection-end="2707" vertical-scroll-proportion="0.0" vertical-offset="773" max-vertical-offset="5460">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/hatch/kite/AppListActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="0" selection-start="3105" selection-end="3105" vertical-scroll-proportion="0.0" vertical-offset="1125" max-vertical-offset="1770">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#3573:5091" expanded="false" />
-          </folding>
-        </state>
+        <state line="59" column="16" selection-start="2707" selection-end="2707" vertical-scroll-proportion="0.0" vertical-offset="773" max-vertical-offset="5460" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hatch/kite/api/TesterApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="113" column="9" selection-start="4447" selection-end="4447" vertical-scroll-proportion="0.0" vertical-offset="1367" max-vertical-offset="1920">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#461#488#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -900,24 +862,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/hatch/kite/AppListActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="31" selection-start="3071" selection-end="3071" vertical-scroll-proportion="0.0" vertical-offset="885" max-vertical-offset="2250">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assets/webViewv2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="7" selection-start="122" selection-end="122" vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="180">
+        <state line="34" column="13" selection-start="748" selection-end="748" vertical-scroll-proportion="-0.625" vertical-offset="495" max-vertical-offset="915">
           <folding>
             <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/activity_app_list.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="335" selection-end="335" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="360">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/applist_detail.xml">
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="690">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/hatch/kite/AppDetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="65" selection-start="5020" selection-end="5020" vertical-scroll-proportion="1.0036167" vertical-offset="1125" max-vertical-offset="2445">
+        <state line="93" column="16" selection-start="3814" selection-end="3814" vertical-scroll-proportion="0.49723756" vertical-offset="1185" max-vertical-offset="2415">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1629#6438#0" expanded="true" />
-            <element signature="e#6427#6428#0" expanded="true" />
-            <element signature="e#6704#7057#0" expanded="true" />
-            <element signature="e#7046#7047#0" expanded="true" />
           </folding>
         </state>
       </provider>
